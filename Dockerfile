@@ -11,6 +11,7 @@ RUN npm run build
 # will be inside /app/build, which will be copied over during the Run Phase.
 
 FROM nginx
+# Without EXPOSE parameter, the environment worked successfully.
 # EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # How do we know where we should copy the files for nginx?
