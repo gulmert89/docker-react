@@ -1,6 +1,6 @@
 FROM node:16-alpine as builder
 WORKDIR '/app'
-COPY package.json .
+COPY package*.json ./
 RUN npm install
 # We won't change our files in production environment. Thus we can just copy
 # our files directly into the image without specifying any volumes or something.
